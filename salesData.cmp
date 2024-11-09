@@ -1,0 +1,10 @@
+<aura:component controller="SalesAnalyticsController">
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:handler name="init" value="{!this}" action="{!c.fetchAccounts}" />
+    
+    <lightning:card title="Sales Accounts">
+        <aura:iteration items="{!v.accounts}" var="acc">
+            <p>{!acc.Name} - Annual Revenue: ${!acc.AnnualRevenue}</p>
+        </aura:iteration>
+    </lightning:card>
+</aura:component>
